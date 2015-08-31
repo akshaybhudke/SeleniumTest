@@ -128,13 +128,16 @@ public class CreateAccount  {
 
 	public static WebElement btn_NextStep(WebDriver driver) {
 
-		element = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/form/div[13]/input"));
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/form/div[13]/input")).click();
+		element=driver.findElement(By.xpath("/html/body/div[3]/table/tbody/tr/td/font[2]/p"));
 		
-		String actual=element.findElement(By.xpath("/html/body/div[3]/table/tbody/tr/td/font[2]/p")).toString();
-		 Assert.assertEquals(actual,"In order to have a Google Account, you must meet certain age requirements. To learn more about online child safety, visit the Federal Trade Commission's website.");
+			return element;
 
-		return element;
-
+	}
+	public static WebElement after_NextStep(WebDriver webDriver){
+		element=webDriver.findElement(By.xpath("/html/body/div[3]/table/tbody/tr/td/font[2]/p"));
+		
+		  return element;
 	}
 
 }
