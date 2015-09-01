@@ -96,7 +96,8 @@ public class CreateAccount  {
 	public static WebElement txtbx_RecoveryEmail(WebDriver driver) {
 
 		element = driver.findElement(By.xpath("id('RecoveryEmailAddress')"));
-
+		
+	
 		return element;
 
 	}
@@ -134,8 +135,8 @@ public class CreateAccount  {
 			return element;
 
 	}
-	public static WebElement after_NextStep(WebDriver webDriver){
-		element=webDriver.findElement(By.xpath("/html/body/div[3]/table/tbody/tr/td/font[2]/p"));
+	public static String after_NextStep(WebDriver webDriver){
+		String element=webDriver.findElement(By.xpath("//div[@class='body']//table//b")).getText();
 		
 		  return element;
 	}
